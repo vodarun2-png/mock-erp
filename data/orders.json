@@ -1,0 +1,177 @@
+[
+  {
+    "orderNumber": "SO-100001",
+    "customer": { "customerId": "C-5001", "name": "Priya Sharma", "email": "priya.sharma@example.com" },
+    "orderDate": "2026-09-20",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-09-25",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100001",
+    "shippingAddress": { "street": "120 Market St", "city": "San Francisco", "state": "CA", "postalCode": "94105", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "HP-NC700", "description": "Noise-cancelling headphones", "quantity": 1, "unitPrice": 249.00, "finalSale": false, "returnedQuantity": 0 },
+      { "lineId": "2", "sku": "CASE-HP-01", "description": "Headphone travel case", "quantity": 1, "unitPrice": 29.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Happy path: delivered recently, everything returnable"
+  },
+  {
+    "orderNumber": "SO-100002",
+    "customer": { "customerId": "C-5001", "name": "Priya Sharma", "email": "priya.sharma@example.com" },
+    "orderDate": "2026-07-02",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-07-08",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100002",
+    "shippingAddress": { "street": "120 Market St", "city": "San Francisco", "state": "CA", "postalCode": "94105", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "KB-MX-K2", "description": "Mechanical keyboard", "quantity": 1, "unitPrice": 159.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Outside the 30-day return window"
+  },
+  {
+    "orderNumber": "SO-100003",
+    "customer": { "customerId": "C-5002", "name": "Marcus Lee", "email": "marcus.lee@example.com" },
+    "orderDate": "2026-10-01",
+    "status": "PARTIALLY_SHIPPED",
+    "deliveredDate": null,
+    "currency": "USD",
+    "paymentReference": "pi_mock_100003",
+    "shippingAddress": { "street": "88 Lake Shore Dr", "city": "Chicago", "state": "IL", "postalCode": "60611", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "MON-27-4K", "description": "27-inch 4K monitor", "quantity": 1, "unitPrice": 399.00, "finalSale": false, "returnedQuantity": 0, "lineStatus": "DELIVERED", "lineDeliveredDate": "2026-10-04" },
+      { "lineId": "2", "sku": "ARM-MON-02", "description": "Dual monitor arm", "quantity": 1, "unitPrice": 89.00, "finalSale": false, "returnedQuantity": 0, "lineStatus": "BACKORDERED", "lineDeliveredDate": null }
+    ],
+    "_scenario": "Partially shipped: line 1 returnable, line 2 not yet delivered"
+  },
+  {
+    "orderNumber": "SO-100004",
+    "customer": { "customerId": "C-5002", "name": "Marcus Lee", "email": "marcus.lee@example.com" },
+    "orderDate": "2026-09-15",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-09-19",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100004",
+    "shippingAddress": { "street": "88 Lake Shore Dr", "city": "Chicago", "state": "IL", "postalCode": "60611", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "LAP-SLV-15", "description": "Laptop sleeve 15-inch", "quantity": 2, "unitPrice": 35.00, "finalSale": false, "returnedQuantity": 2 }
+    ],
+    "_scenario": "Already fully returned"
+  },
+  {
+    "orderNumber": "SO-100005",
+    "customer": { "customerId": "C-5003", "name": "Ananya Iyer", "email": "ananya.iyer@example.com" },
+    "orderDate": "2026-09-28",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-10-02",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100005",
+    "shippingAddress": { "street": "45 Peachtree St", "city": "Atlanta", "state": "GA", "postalCode": "30303", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "SPK-SMART-01", "description": "Smart speaker (clearance)", "quantity": 1, "unitPrice": 59.00, "finalSale": true, "returnedQuantity": 0 },
+      { "lineId": "2", "sku": "CBL-USBC-2M", "description": "USB-C cable 2m", "quantity": 3, "unitPrice": 12.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Mixed: line 1 final sale (not returnable), line 2 returnable"
+  },
+  {
+    "orderNumber": "SO-100006",
+    "customer": { "customerId": "C-5003", "name": "Ananya Iyer", "email": "ananya.iyer@example.com" },
+    "orderDate": "2026-10-08",
+    "status": "PROCESSING",
+    "deliveredDate": null,
+    "currency": "USD",
+    "paymentReference": "pi_mock_100006",
+    "shippingAddress": { "street": "45 Peachtree St", "city": "Atlanta", "state": "GA", "postalCode": "30303", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "CAM-WEB-4K", "description": "4K webcam", "quantity": 1, "unitPrice": 129.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Not shipped yet: should be cancelled, not returned"
+  },
+  {
+    "orderNumber": "SO-100007",
+    "customer": { "customerId": "C-5004", "name": "Daniel Okafor", "email": "daniel.okafor@example.com" },
+    "orderDate": "2026-09-30",
+    "status": "SHIPPED",
+    "deliveredDate": null,
+    "trackingNumber": "1Z999AA10123456784",
+    "carrier": "UPS",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100007",
+    "shippingAddress": { "street": "9 Congress Ave", "city": "Austin", "state": "TX", "postalCode": "78701", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "CHR-ERGO-01", "description": "Ergonomic office chair", "quantity": 1, "unitPrice": 489.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "In transit: 'where is my order' question, not returnable yet"
+  },
+  {
+    "orderNumber": "SO-100008",
+    "customer": { "customerId": "C-5004", "name": "Daniel Okafor", "email": "daniel.okafor@example.com" },
+    "orderDate": "2026-09-22",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-09-26",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100008",
+    "shippingAddress": { "street": "9 Congress Ave", "city": "Austin", "state": "TX", "postalCode": "78701", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "DESK-STD-60", "description": "Standing desk 60-inch", "quantity": 1, "unitPrice": 1299.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "High value: refund over $1000 should need human approval in Salesforce"
+  },
+  {
+    "orderNumber": "SO-100009",
+    "customer": { "customerId": "C-5005", "name": "Sofia Martinez", "email": "sofia.martinez@example.com" },
+    "orderDate": "2026-09-18",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-09-23",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100009",
+    "shippingAddress": { "street": "300 Pike St", "city": "Seattle", "state": "WA", "postalCode": "98101", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "MUG-SET-4", "description": "Ceramic mug set (4)", "quantity": 2, "unitPrice": 32.00, "finalSale": false, "returnedQuantity": 1 }
+    ],
+    "_scenario": "Partially returned already: only 1 of 2 left to return"
+  },
+  {
+    "orderNumber": "SO-100010",
+    "customer": { "customerId": "C-5005", "name": "Sofia Martinez", "email": "sofia.martinez@example.com" },
+    "orderDate": "2026-09-10",
+    "status": "CANCELLED",
+    "deliveredDate": null,
+    "currency": "USD",
+    "paymentReference": "pi_mock_100010",
+    "shippingAddress": { "street": "300 Pike St", "city": "Seattle", "state": "WA", "postalCode": "98101", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "TAB-10-64", "description": "10-inch tablet 64GB", "quantity": 1, "unitPrice": 279.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Cancelled order: nothing to return"
+  },
+  {
+    "orderNumber": "SO-100011",
+    "customer": { "customerId": "C-5006", "name": "Rahul Verma", "email": "rahul.verma@example.com" },
+    "orderDate": "2026-09-08",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-09-12",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100011",
+    "shippingAddress": { "street": "1 Main St", "city": "Boston", "state": "MA", "postalCode": "02108", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "BAG-BKPK-01", "description": "Commuter backpack", "quantity": 1, "unitPrice": 119.00, "finalSale": false, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Edge of window: delivered exactly 28 days before Oct 10, 2026"
+  },
+  {
+    "orderNumber": "SO-100012",
+    "customer": { "customerId": "C-5006", "name": "Rahul Verma", "email": "rahul.verma@example.com" },
+    "orderDate": "2026-10-03",
+    "status": "DELIVERED",
+    "deliveredDate": "2026-10-06",
+    "currency": "USD",
+    "paymentReference": "pi_mock_100012",
+    "shippingAddress": { "street": "1 Main St", "city": "Boston", "state": "MA", "postalCode": "02108", "country": "US" },
+    "lines": [
+      { "lineId": "1", "sku": "PHN-CASE-15", "description": "Phone case", "quantity": 1, "unitPrice": 25.00, "finalSale": false, "returnedQuantity": 0 },
+      { "lineId": "2", "sku": "CHG-65W", "description": "65W fast charger", "quantity": 1, "unitPrice": 49.00, "finalSale": false, "returnedQuantity": 0 },
+      { "lineId": "3", "sku": "SCR-PROT-15", "description": "Screen protector (opened)", "quantity": 1, "unitPrice": 15.00, "finalSale": true, "returnedQuantity": 0 }
+    ],
+    "_scenario": "Multi-line: lets the agent ask which items to return"
+  }
+]
